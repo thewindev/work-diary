@@ -38,10 +38,10 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in Iasi, Romania building useful things.
+              Hi there! I'm <strong>{author}</strong>, a .NET developer from Iasi, Romania, and on this blog you'll find short stories about what I learn every day at work.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
+                Follow me on Twitter
               </a>
             </p>
           </div>
