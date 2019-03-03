@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Metatags from '../components/Metatags';
 import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
@@ -11,9 +12,16 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-
+    const url = this.props.data.site.siteMetadata.siteUrl
+    const { title, description } = post.frontmatter;
     return (
       <Layout location={this.props.location} title={siteTitle}>
+      <Metatags
+                title={title}
+                description={description}
+                url={url}
+                pathname={this.props.location.pathname}
+            />
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -74,6 +82,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
