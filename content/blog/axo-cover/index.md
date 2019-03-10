@@ -7,7 +7,7 @@ description: ""
 We started measuring code coverage and one of my colleagues found this nice tool called AxoCover.
 
 It allows you to filter what you want to cover, it has a simple UI and most importantly...it's open source and free to use!
-![axocover](.\axosettings.png)
+![axocover](axosettings.png)
 
 To be honest, filtering is easier with dotCover, but once you fiddle with it you begin to understand how it works.
 For example, I don't want my xaml files and the code behind to be covered by tests, so I use this filter:
