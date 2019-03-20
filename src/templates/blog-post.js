@@ -6,14 +6,29 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Metatags from '../components/Metatags';
 import { rhythm, scale } from "../utils/typography"
+import asyncComponent from "../components/AsyncComponent";
+
+const Share = asyncComponent(() =>
+  import("../components/Share")
+    .then(module => {
+      return module.default;
+    })
+    .catch(error => {})
+);
+
 
 class BlogPostTemplate extends React.Component {
   render() {
+   
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
     const url = this.props.data.site.siteMetadata.siteUrl
     const { title, description } = post.frontmatter;
+    post.fields = {
+                slug: this.props.pathContext.slug,
+                url
+    };
     return (
       <Layout location={this.props.location} title={siteTitle}>
       <Metatags
@@ -69,6 +84,8 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        <Share post={post}  />
+
       </Layout>
     )
   }
