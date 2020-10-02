@@ -5,7 +5,6 @@ import {
   LinkedinShareButton,
   TwitterShareButton,
   FacebookShareCount,
-  LinkedinShareCount,
   FacebookIcon,
   TwitterIcon,
   LinkedinIcon
@@ -35,7 +34,7 @@ const PostShare = props => {
           <TwitterShareButton
             url={url}
             title={title}
-            additionalProps={{
+            additionalrops={{
               "aria-label": "Twitter share"
             }}
           >
@@ -44,7 +43,7 @@ const PostShare = props => {
           <FacebookShareButton
             url={url}
             quote={`${title}`}
-            additionalProps={{
+            additionalprops={{
               "aria-label": "Facebook share"
             }}
           >
@@ -57,20 +56,17 @@ const PostShare = props => {
             url={url}
             title={title}
             description={excerpt}
-            additionalProps={{
+            additionalprops={{
               "aria-label": "LinkedIn share"
             }}
           >
             <LinkedinIcon round size={iconSize} />
-            <LinkedinShareCount url={url}>
-              {count => <div className="share-count">{filter(count)}</div>}
-            </LinkedinShareCount>
           </LinkedinShareButton>
         </div>
       </div>
 
       {/* --- STYLES --- */}
-      <style jsx>{`
+      <style >{`
         .share {
           display: flex;
           flex-direction: column;
@@ -106,8 +102,7 @@ const PostShare = props => {
 };
 
 PostShare.propTypes = {
-  post: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  post: PropTypes.object.isRequired
 };
 
 export default PostShare;
