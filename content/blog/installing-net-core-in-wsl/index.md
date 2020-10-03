@@ -3,6 +3,7 @@ title: Installing .NET Core in WSL
 date: "2019-03-05T19:00:00.121Z"
 description: ""
 ---
+UPDATE: If you want to install .NET Core 3.1 in WSL, [read this](https://workdiary.dev/installing-net-core-3-in-wsl/).
 
 I was trying to install .NET Core in WSL based on [their install steps](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/sdk-current) and I keep getting these errors:
 ```
